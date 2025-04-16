@@ -35,10 +35,13 @@
               <a class="nav-link" aria-current="page" href="#">Start</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="https://zse.boleslawiec.pl/plan_www/index2.php" target="_blank">Plan lekcji</a>
+                <a class="nav-link" aria-current="page" href="https://pl.wikipedia.org/wiki/Git_(oprogramowanie)" target="_blank">Wiki</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="https://uonetplus.vulcan.net.pl/powiatboleslawiecki" target="_blank">Dziennik</a>
+                <a class="nav-link" aria-current="page" href="https://git-scm.com/downloads" target="_blank">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://github.com" target="_blank">GitHub</a>
               </li>
               </ul>
             </li>
@@ -46,12 +49,54 @@
         </div>
       </div>
     </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-9">
+            <h1>Git</h1>
+              <p>Git – rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. Git stanowi wolne oprogramowanie i został opublikowany na licencji GNU GPL w wersji 2.</p>
+              <p>Pierwsza wersja narzędzia Git została wydana 7 kwietnia 2005 roku, by zastąpić poprzednio używany w rozwoju Linuksa, niebędący wolnym oprogramowaniem, system kontroli wersji BitKeeper.</p>
+              <h2>Historia</h2>
+              <p>Prace nad Gitem rozpoczęły się po tym, jak BitKeeper, używany wtedy do rozwoju Linuksa, przestał być darmowy dla projektów o otwartym kodzie źródłowym. Torvalds szukał rozproszonego systemu kontroli wersji, który mógłby być użyty zamiast BitKeepera. Głównymi kryteriami wyboru były: </p>
+              <ol>
+                <li>Przykład CVS, czego nie robić.</li>
+                <li>System powinien być rozproszony.</li>
+                <li>System powinien być chroniony przed błędami w repozytorium (przypadkowymi, jak awaria twardego dysku, jak i złośliwymi, wprowadzonymi przez kogoś).</li>
+                <li>System powinien być szybki.</li>
+              </ol>
+              <p>Pierwsze dwa punkty wyeliminowały wszystko prócz Monotone’a, a czwarty punkt wyeliminował wszystko, więc Torvalds postanowił napisać własny system kontroli wersji.</p>
+              <p>Prace nad Gitem rozpoczęły się 3 kwietnia 2005 roku, projekt został ogłoszony 6 kwietnia, 7 kwietnia Git obsługiwał kontrolę wersji swojego własnego kodu, 18 kwietnia pierwszy raz wykonano łączenie kilku gałęzi kodu, 27 kwietnia Git został przetestowany pod względem szybkości z wynikiem 6,7 łat na sekundę, a 16 czerwca Linux 2.6.12 był hostowany przez Gita.</p>
+              <h2>Najważniejsze cechy</h2>
+              <p>Dobre wsparcie dla rozgałęzionego procesu tworzenia oprogramowania: jest dostępnych kilka algorytmów łączenia zmian z dwóch gałęzi, a także możliwość dodawania własnych algorytmów.</p>
+              <p>Praca off-line: każdy programista posiada własną kopię repozytorium, do której może zapisywać zmiany bez połączenia z siecią; następnie zmiany mogą być wymieniane między lokalnymi repozytoriami. Programista może także dodawać oraz usuwać gałęzie.</p>
+              <p>Wsparcie dla istniejących protokołów sieciowych: dane można wymieniać przez HTTP(S), FTP, rsync (usunięte w wersji Git 2.8.0.</p>
+              <p>Efektywna praca z dużymi projektami: system Git według zapewnień Torvaldsa, a także według testów fundacji Mozilla, jest o rzędy wielkości szybszy niż niektóre konkurencyjne rozwiązania.</p>
+              <p>Każda rewizja to obraz całego projektu: w przeciwieństwie do innych systemów kontroli wersji, Git nie zapamiętuje zmian między kolejnymi rewizjami, lecz kompletne obrazy. Z jednej strony wymaga to nieco więcej pracy, aby porównać dwie rewizje, z drugiej jednak pozwala np. na automatyczną obsługę zmian nazw plików.</p>
+              <h2>Projekty</h2>
+              <p>Wiele projektów używa Gita jako systemu kontroli wersji, zarówno nowo powstających, jak i migrowanch do niego z innego systemu kontroli wersji (np. CVS lub SVN). Do największych i najbardziej znanych projektów o otwartym źródle (a więc również posiadających dużo użytkowników i osób rozwijających oraz liczbę zmian) należy wymienić: jądro Linuksa oraz podprojekty z nim związane, a także GNU Hurd, GNOME, GTK+, GStreamer, KDE, GIMP, Perl, Qt, Ruby on Rails, Samba, Wine, Xfce, Xorg, jQuery, YUI, Erlang. Również część serwisów internetowych używa Gita do rozwijania swojego kodu (a część z niego jest publicznie dostępna), m.in. Reddit (otwarte źródła), Digg, Facebook.</p>
+              <p>Kilka systemów operacyjnych korzysta z Gita do zarządzania całą dystrybucją oraz dodatkowymi programami w nie wchodzącymi: Arch Linux, Android, Fedora, Maemo, MeeGo, OLPC XO-1, openSUSE oraz DragonFly BSD. Dystrybucje Debian oraz Ubuntu używają Gita do rozwijania programów oraz zmian w programach zewnętrznych dla wielu (choć nie wszystkich) pakietów.</p>
+              <p>Wiele projektów używa innego systemu kontroli wersji, ale używa synchronizacji pomiędzy nim a Git, tak aby osoby chcące wykorzystywać większe możliwości Gita mogły go używać. Do przykładów należy projekt LLVM i clang (używają SVN).</p>
+              <h2>Git server</h2>
+              <p>Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to GitHub, Bitbucket, GitLab, Git Daemon, Gitolite, Gerrit, Gitiles, Bonobo Git Server, Git Server.</p>
+              <h2>Przenośność</h2>
+              <p>Git jest rozwijany dla systemu operacyjnego GNU/Linux, ale może być też używany na innych systemach operacyjnych bazujących na Uniksie, takich jak BSD czy Solaris. Oficjalny port na Windowsa używa Cygwina (emulatora środowiska POSIX), jednak jest on o wiele wolniejszy niż na systemach używających POSIX-a natywnie. Istnieją też porty natywne na Windows (używające MinGW) i są w fazie produkcji.</p>
+              <h2>Hosting</h2>
+              <p>Istnieją serwisy internetowe umożliwiające hostowanie repozytoriów Gita oraz zapewniające rozwiązania ciągłej integracji oraz wdrażania, m.in. Bitbucket, GitHub i GitLab. Niektóre z nich, takie jak np. Gitea, umożliwiają uruchomienie własnej, darmowej instancji danego narzędzia, ale udostępniają płatny hosting, inne (jak np. GitLab) mają płatne plany dla większych repozytoriów lub dodatkowych usług.</p>
+              <h2>GitHub</h2>
+              <p>GitHub – hostingowy serwis internetowy przeznaczony do projektów programistycznych wykorzystujących system kontroli wersji Git. Stworzony został przy wykorzystaniu frameworka Ruby on Rails i języka Erlang. Serwis działa od kwietnia 2008 roku. GitHub udostępnia darmowy hosting programów otwartoźródłowych i prywatnych repozytoriów (część funkcji w ramach prywatnych repozytoriów jest płatna). W czerwcu 2018 ogłoszono, iż serwis zostanie przejęty przez przedsiębiorstwo Microsoft za kwotę 7,5 miliarda dolarów.</p>
+              <p>W maju 2019 roku GitHub poinformował, że ma około 37 milionów użytkowników i więcej niż 100 milionów repozytoriów (w tym co najmniej 28 milionów repozytoriów publicznych).</p>
+            </div>
+            <div class="col-lg-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Lc3_2018_%28263682303%29_%28cropped%29.jpeg" class="img-fluid" alt="Linus Torvalds">
+            </div>
+          </div>
+    </div>
     <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Start</a></li>
-            <li class="nav-item"><a href="https://zse.boleslawiec.pl/plan_www/index2.php" class="nav-link px-2 text-body-secondary" target="_blank">Plan lekcji</a></li>
-            <li class="nav-item"><a href="https://uonetplus.vulcan.net.pl/powiatboleslawiecki" class="nav-link px-2 text-body-secondary" target="_blank">Dziennik</a></li>
+            <li class="nav-item"><a href="https://pl.wikipedia.org/wiki/Git_(oprogramowanie)" class="nav-link px-2 text-body-secondary" target="_blank">Wiki</a></li>
+            <li class="nav-item"><a href="https://git-scm.com/downloads" class="nav-link px-2 text-body-secondary" target="_blank">Download</a></li>
+            <li class="nav-item"><a href="https://github.com" class="nav-link px-2 text-body-secondary" target="_blank">GitHub</a></li>
           </ul>
           <p class="text-center text-body-secondary">© 2025 Kurs GITa</p>
         </footer>
