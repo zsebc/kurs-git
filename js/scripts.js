@@ -74,3 +74,38 @@ async function displayPrices(url, element, customHeaders = []) {
         console.log("Tablica danych do wyświetlenia jest pusta.");
     }
 }
+
+async function displayChart(url, element, label, defaultKeys = [0, 1]) {
+    const data = await getData(url);
+    const chartElement = document.getElementById(element);
+    let dataToDisplay = data;
+
+    if (data && data.hasOwnProperty("rates") && Array.isArray(data.rates)) {
+        dataToDisplay = data.rates;
+    }
+
+    if (chartElement && dataToDisplay.length > 0) {
+        const keys = Object.keys(dataToDisplay[0]);
+        const config = {
+            type: 'line',
+            data: {
+                labels: dataToDisplay.map(row => row[keys[defaultKeys[0]]]),
+                datasets: [
+                    {
+                        label: label,
+                        data: dataToDisplay.map(row => row[keys[defaultKeys[1]]])
+                    }
+                ]
+            }
+        }
+
+        new Chart(
+            document.getElementById(element),
+            config
+        );
+    } else if (!chartElement) {
+        console.log(`Element o id ${element}' nie został znaleziony na stronie.`);
+    } else if (dataToDisplay.length === 0) {
+        console.log("Tablica danych do wyświetlenia jest pusta.");
+    }
+};
