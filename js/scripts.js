@@ -75,7 +75,7 @@ async function displayPrices(url, element, customHeaders = []) {
     }
 }
 
-async function displayChart(url, element, label, defaultKeys = [0, 1]) {
+async function displayChart(url, element, label, defaultKeys = [0, 1], borderColor = 'gold') {
     const data = await getData(url);
     const chartElement = document.getElementById(element);
     let dataToDisplay = data;
@@ -93,7 +93,8 @@ async function displayChart(url, element, label, defaultKeys = [0, 1]) {
                 datasets: [
                     {
                         label: label,
-                        data: dataToDisplay.map(row => row[keys[defaultKeys[1]]])
+                        data: dataToDisplay.map(row => row[keys[defaultKeys[1]]]),
+                        borderColor: borderColor
                     }
                 ]
             }
