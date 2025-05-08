@@ -39,10 +39,13 @@
   </nav>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="mb-4">Ceny Funta</h1>
-      </div>
-      <div id="funt-prices"></div>
+        <h1 class="mb-4">Ceny Funta
+        <div class="col-lg-12"></div>
+        </h1>
+      <div id="funt-prices" class="col-lg-4"></div>
+      <div class="col-lg-8">
+        <canvas id="funt-chart"></canvas>
+        </div>
         <script>
           displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-prices", ["Nazwa Tabeli","Data", "Cena"]);
         </script>
