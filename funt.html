@@ -7,7 +7,7 @@
   <title>Ceny Funta</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="chart.umd.min.js"></script>
+  <script src="js/chart.umd.min.js"></script>
   <script src="js/scripts.js"></script>
 </head>
 
@@ -39,16 +39,16 @@
   </nav>
   <div class="container mt-5">
     <div class="row">
-        <h1 class="mb-4">Ceny Funta
-        <div class="col-lg-12"></div>
-        </h1>
+        <div class="col-lg-12">
+          <h1 class="mb-4">Ceny Funta
+        </div>
       <div id="funt-prices" class="col-lg-4"></div>
       <div class="col-lg-8">
         <canvas id="funt-chart"></canvas>
         </div>
         <script>
           displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-prices", ["Nazwa Tabeli","Data", "Cena"]);
-          displayChart("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10" "funt-chart", "Ceny Funta", ["Data" ,"Cena"])
+          displayChart("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-chart" , "Ceny Funta", ["Data" ,"Cena"])
         </script>
     </div>
   </div>
