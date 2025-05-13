@@ -7,7 +7,7 @@
   <title>Ceny Jena</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="chart.umd.min.js"></script>
+  <script src="js/chart.umd.min.js"></script>
   <script src="js/scripts.js"></script>
 </head>
 
@@ -50,6 +50,7 @@
         </div>
         <script>
           displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/", "jen-prices", ["Nazwa tabeli","Data", "Cena"]);
+          displayChart("https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/","jen-chart", ["Ceny Jena"], [1,2]);
         </script>
     </div>
   </div>
