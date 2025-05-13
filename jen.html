@@ -43,11 +43,14 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="mb-4">Ceny Jena</h1>
-        <div id="jen-prices"></div>
+        </div>
+        <div id="jen-prices" class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <canvas id="jen-chart"></canvas>
+        </div>
         <script>
           displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/", "jen-prices", ["Nazwa tabeli","Data", "Cena"]);
         </script>
-      </div>
     </div>
   </div>
   <div class="container-fluid bg-dark" data-bs-theme="dark">
