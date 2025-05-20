@@ -110,3 +110,9 @@ async function displayChart(url, element, label, defaultKeys = [0, 1], borderCol
         console.log("Tablica danych do wyświetlenia jest pusta.");
     }
 };
+
+function reloadPage() {
+    var selectElement = document.getElementById("dataCount");
+    var selectedValue = selectElement.value;
+    window.location.href = "?count=" + selectedValue;
+}
