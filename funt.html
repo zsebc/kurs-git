@@ -60,9 +60,15 @@
       <div class="col-lg-8">
         <canvas id="funt-chart"></canvas>
       </div>
-      <script>
-        displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-prices", ["Nazwa Tabeli", "Data", "Cena"]);
-        displayChart("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-chart", "Ceny Funta", ["1", "2"], "green")
+        <script>
+        window.onload = function () {
+          var urlParams = new URLSearchParams(window.location.search);
+          var count = urlParams.get("count") || 10;
+          var selectElement = document.getElementById("dataCount");
+          selectElement.value = count;
+          displayPrices(`https://api.nbp.pl/api/exchangerates/rates/a/GBP/last/${count}/`, "funt-prices", ["Nazwa tabeli", "Data", "Cena"]);
+          displayChart(`https://api.nbp.pl/api/exchangerates/rates/a/GBP/last/${count}/`, "funt-chart", "Ceny funta", [1, 2], "green");
+        };
       </script>
     </div>
   </div>
