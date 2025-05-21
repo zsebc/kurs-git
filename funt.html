@@ -48,14 +48,27 @@
       <div class="col-lg-12">
         <h1 class="mb-4"><i class="fa fa-money color-green"></i> Ceny Funta
         </h1>
+        <label for="dataCount" class="form-label">Wybierz ilość danych:</label>
+        <select id="dataCount" onchange="reloadPage()" class="form-select w-25 mb-4">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        </select>
       </div>
       <div id="funt-prices" class="col-lg-4"></div>
       <div class="col-lg-8">
         <canvas id="funt-chart"></canvas>
       </div>
-      <script>
-        displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-prices", ["Nazwa Tabeli", "Data", "Cena"]);
-        displayChart("https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10", "funt-chart", "Ceny Funta", ["1", "2"], "green")
+        <script>
+        window.onload = function () {
+          var urlParams = new URLSearchParams(window.location.search);
+          var count = urlParams.get("count") || 10;
+          var selectElement = document.getElementById("dataCount");
+          selectElement.value = count;
+          displayPrices(`https://api.nbp.pl/api/exchangerates/rates/a/GBP/last/${count}/`, "funt-prices", ["Nazwa tabeli", "Data", "Cena"]);
+          displayChart(`https://api.nbp.pl/api/exchangerates/rates/a/GBP/last/${count}/`, "funt-chart", "Ceny funta", [1, 2], "green");
+        };
       </script>
     </div>
   </div>
