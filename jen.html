@@ -54,18 +54,14 @@
         <canvas id="jen-chart"></canvas>
       </div>
       <script>
-        displayPrices(
-          "https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/",
-          "jen-prices",
-          ["Nazwa tabeli", "Data", "Cena"]
-        );
-        displayChart(
-          "https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/",
-          "jen-chart",
-          ["Ceny Jena"],
-          [1, 2],
-          "green"
-        );
+        window.onload = function () {
+          var urlParams = new URLSearchParams(window.location.search);
+          var count = urlParams.get("count") || 10;
+          var selectElement = document.getElementById("dataCount");
+          selectElement.value = count;
+          displayPrices(`https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/${count}/`, "jen-prices", ["Nazwa tabeli","Data", "Cena"]);
+          displayChart(`https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/${count}/`, "jen-chart", "Ceny jena", [1,2], "green");
+          };
       </script>
     </div>
   </div>
