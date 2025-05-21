@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ceny Jena</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/chart.umd.min.js"></script>
   <script src="js/scripts.js"></script>
@@ -41,14 +41,27 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="mb-4"><i class="fa fa-money color-green"></i>Ceny Jena</h1>
+        <label for="dataCount" class="form-label">Wybierz ilość danych:</label>
+        <select id="dataCount" onchange="reloadPage()" class="form-select w-25 mb-4">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
       </div>
       <div id="jen-prices" class="col-lg-4"></div>
       <div class="col-lg-8">
         <canvas id="jen-chart"></canvas>
       </div>
       <script>
-        displayPrices("https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/", "jen-prices", ["Nazwa tabeli", "Data", "Cena"]);
-        displayChart("https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/10/", "jen-chart", ["Ceny Jena"], [1, 2], "green");
+        window.onload = function () {
+          var urlParams = new URLSearchParams(window.location.search);
+          var count = urlParams.get("count") || 10;
+          var selectElement = document.getElementById("dataCount");
+          selectElement.value = count;
+          displayPrices(`https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/${count}/`, "jen-prices", ["Nazwa tabeli","Data", "Cena"]);
+          displayChart(`https://api.nbp.pl/api/exchangerates/rates/a/jpy/last/${count}/`, "jen-chart", "Ceny jena", [1,2], "green");
+          };
       </script>
     </div>
   </div>
@@ -66,8 +79,7 @@
                 class="nav-link p-0 text-body-secondary" target="_blank">Bootstrap</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="https://api.nbp.pl/" class="nav-link p-0 text-body-secondary" target="_blank">NBP
-                Web API</a>
+              <a href="https://api.nbp.pl/" class="nav-link p-0 text-body-secondary" target="_blank">NBP Web API</a>
             </li>
           </ul>
         </div>
@@ -76,8 +88,7 @@
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               <a href="https://github.com/zsebc/kurs-git" class="nav-link p-0 text-body-secondary"
-                target="_blank">Projekt
-                na GitHubie</a>
+                target="_blank">Projekt na GitHubie</a>
             </li>
           </ul>
         </div>
